@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\victo\source\repos\WPF_ExpirationDateTracker\WPF_ExpirationDateTracker\App.xaml
-11407045341
+255340714
 
-5-673736223
+81127832253
 218106849559
-MainWindow.xaml;
+MainWindow.xaml;Views\ShellView.xaml;
 
 False
 
