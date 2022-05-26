@@ -4,9 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_ExpirationDateTracker.Views"
-        mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="18"
+        Title="ShellView"  Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" 
+                   FontSize="24" Text="Expiration Date Tracker" Grid.ColumnSpan="4"
+                   Margin="0,0,0,20"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="2"
+                   FontSize="22" Text="Name:"/>
+        <TextBox x:Name="product_name" Grid.Column="2" Grid.Row="2"
+                 MinWidth="150"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="3"
+                   FontSize="22" Text="Date:" Margin="0,10,0,0"/>
+        <DatePicker Grid.Column="2" Grid.Row="3"
+                   FontSize="18" Text="Date:" Margin="0,10,0,0"/>
+
+        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"
+            Margin="0,10,0,0" x:Name="submitButton" Content="Save Food" Click="submitButton_Click"/>
     </Grid>
 </Window>
