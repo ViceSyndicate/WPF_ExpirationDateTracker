@@ -28,6 +28,18 @@ namespace WPF_ExpirationDateTracker
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
             string food_name = name.Text;
+            string food_expirationdate = date.Text ;
+
+
+            Console.WriteLine(food_expirationdate);
+            Console.WriteLine(food_name);
+            Console.WriteLine();
+
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            string food_name = name.Text;
         }
     }
 }
