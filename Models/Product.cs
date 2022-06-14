@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_ExpirationDateTracker.Models
 {
-    public class ProductModel
+    [Serializable] public class Product
     {
         string ProductName { get; set; }
         DateOnly ExpirationDate { get; set; }

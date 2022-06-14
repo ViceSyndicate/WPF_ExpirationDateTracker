@@ -12,12 +12,12 @@ namespace WPF_ExpirationDateTracker.ViewModels
     {
         private string _productName;
         private DateOnly _expiryDate;
-        private ProductModel _selectedProduct;
-        private BindableCollection<ProductModel> _products = new BindableCollection<ProductModel>();
+        private Product _selectedProduct;
+        private BindableCollection<Product> _products = new BindableCollection<Product>();
 
         public ShellViewModel()
         {
-            Products.Add(new ProductModel {});
+            Products.Add(new Product { });
         }
 
         public string ProductName
@@ -43,7 +43,7 @@ namespace WPF_ExpirationDateTracker.ViewModels
             }
         }
 
-        public BindableCollection<ProductModel> Products
+        public BindableCollection<Product> Products
         {
             get { return _products; }
             set { _products = value; }
@@ -51,7 +51,7 @@ namespace WPF_ExpirationDateTracker.ViewModels
 
         
 
-        public ProductModel SelectedProduct
+        public Product SelectedProduct
         {
             get { return _selectedProduct; }
             set 

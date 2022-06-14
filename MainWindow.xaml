@@ -46,16 +46,16 @@
         <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"
             Margin="0,10,0,0" x:Name="deleteButton" Content="Delete Food" Click="deleteButton_Click" Background="Crimson"/>
 
-        <ListBox Grid.Column="4" Grid.Row="2" Grid.RowSpan="6"
-                 Margin="10,0,10,10"
-                 ScrollViewer.VerticalScrollBarVisibility="Visible">
-            <ListBoxItem Content="Coffie"></ListBoxItem>
-            <ListBoxItem Content="Tea"></ListBoxItem>
-            <ListBoxItem Content="Orange Juice"></ListBoxItem>
-            <ListBoxItem Content="Milk"></ListBoxItem>
-            <ListBoxItem Content="Iced Tea"></ListBoxItem>
-            <ListBoxItem Content="Mango Shake"></ListBoxItem>
-        </ListBox>
+        <DataGrid Grid.Column="4" Grid.Row="2" Grid.RowSpan="6"
+                 AlternatingRowBackground="LightGray" Margin="10,0,10,10">
+ 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Expiry Date" Binding="{Binding Path=ExpirationDate, StringFormat=d}"/>
+
+                <DataGridTextColumn Header="Food Name" Binding="{Binding Path=ProductName}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
         
     </Grid>
 </Window>
