@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//using WPF_ExpirationDateTracker.Models
+
 namespace WPF_ExpirationDateTracker
 {
     /// <summary>
@@ -30,11 +32,14 @@ namespace WPF_ExpirationDateTracker
             string food_name = name.Text;
             string food_expirationdate = date.Text ;
 
+            Models.Product product = new Models.Product();
+            product.Name = food_name;
+            product.ExpirationDate = DateOnly.Parse(food_expirationdate);
 
-            Console.WriteLine(food_expirationdate);
-            Console.WriteLine(food_name);
+
+            Console.WriteLine(product.Name);
+            Console.WriteLine(product.ExpirationDate);
             Console.WriteLine();
-
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)

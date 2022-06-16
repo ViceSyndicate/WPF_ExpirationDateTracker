@@ -47,7 +47,7 @@
             Margin="0,10,0,0" x:Name="deleteButton" Content="Delete Food" Click="deleteButton_Click" Background="Crimson"/>
 
         <DataGrid Grid.Column="4" Grid.Row="2" Grid.RowSpan="6"
-                 AlternatingRowBackground="LightGray" Margin="10,0,10,10">
+                 x:Name="productGrid"  AlternatingRowBackground="LightGray" Margin="10,0,10,10">
  
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Expiry Date" Binding="{Binding Path=ExpirationDate, StringFormat=d}"/>
