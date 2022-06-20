@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9s95JgoU7XujZZbEwowG7ShF08K2wGxOEvxnMCTUapwEf7BirlZ4gns+LdtSag69xFOt0DCOObWMRIud+7kHxQ==",
+  "dgSpecHash": "oNFDuUDPhGbRQXfqr3VMqt0NQOyHVD4nPaG0P9Cmix0zdWR+iW17tBrcVADPu2PE7VqwPtDFKSEh4R7Qqj9b9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\victo\\source\\repos\\WPF_ExpirationDateTracker\\WPF_ExpirationDateTracker\\WPF_ExpirationDateTracker.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\victo\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\microsoft.windows.compatibility\\5.0.0\\microsoft.windows.compatibility.5.0.0.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\victo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\5.0.0-rtm.20519.4\\runtime.linux-arm.runtime.native.system.io.ports.5.0.0-rtm.20519.4.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\5.0.0-rtm.20519.4\\runtime.linux-arm64.runtime.native.system.io.ports.5.0.0-rtm.20519.4.nupkg.sha512",
     "C:\\Users\\victo\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\5.0.0-rtm.20519.4\\runtime.linux-x64.runtime.native.system.io.ports.5.0.0-rtm.20519.4.nupkg.sha512",

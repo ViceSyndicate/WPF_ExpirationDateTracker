@@ -22,9 +22,13 @@ namespace WPF_ExpirationDateTracker
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Models.Product> productList = new List<Models.Product>();
         public MainWindow()
         {
             InitializeComponent();
+            DataManager dataManager = new DataManager();
+            productList = dataManager.GetFoods();
+            productGrid.ItemsSource = productList;
         }
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
@@ -34,12 +38,16 @@ namespace WPF_ExpirationDateTracker
 
             Models.Product product = new Models.Product();
             product.Name = food_name;
-            product.ExpirationDate = DateOnly.Parse(food_expirationdate);
+
+            product.ExpirationDate = DateTime.Parse(food_expirationdate);
 
 
             Console.WriteLine(product.Name);
             Console.WriteLine(product.ExpirationDate);
-            Console.WriteLine();
+            productList.Add(product);
+
+            DataManager dataManager = new DataManager();
+            dataManager.StoreFoods(productList);
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)

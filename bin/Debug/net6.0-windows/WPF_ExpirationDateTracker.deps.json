@@ -9,7 +9,8 @@
       "WPF_ExpirationDateTracker/1.0.0": {
         "dependencies": {
           "Caliburn.Micro": "4.0.173",
-          "Caliburn.Micro.Core": "4.0.173"
+          "Caliburn.Micro.Core": "4.0.173",
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "WPF_ExpirationDateTracker.dll": {}
@@ -114,6 +115,14 @@
           "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {
             "assemblyVersion": "1.1.0.0",
             "fileVersion": "1.1.19.35512"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
           }
         }
       },
@@ -780,6 +789,13 @@
       "sha512": "sha512-5sPWkbqImc2t1aQwIfJcKsUo7tOg1Tr8+6xVzZJB56Nzt4u9NlpcLofgdX/aRYpPKdWDA3U23Akw1KQzU5e82g==",
       "path": "microsoft.xaml.behaviors.wpf/1.1.19",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "runtime.linux-arm.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
       "type": "package",

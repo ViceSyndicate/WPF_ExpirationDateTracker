@@ -70,3 +70,4 @@ C:\Users\victo\source\repos\WPF_ExpirationDateTracker\WPF_ExpirationDateTracker\
 C:\Users\victo\source\repos\WPF_ExpirationDateTracker\WPF_ExpirationDateTracker\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\victo\source\repos\WPF_ExpirationDateTracker\WPF_ExpirationDateTracker\obj\Debug\net6.0-windows\App.baml
 C:\Users\victo\source\repos\WPF_ExpirationDateTracker\WPF_ExpirationDateTracker\obj\Debug\net6.0-windows\WPF_ExpirationDateTracker.csproj.CopyComplete
+C:\Users\victo\source\repos\WPF_ExpirationDateTracker\WPF_ExpirationDateTracker\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

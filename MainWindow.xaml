@@ -48,12 +48,7 @@
 
         <DataGrid Grid.Column="4" Grid.Row="2" Grid.RowSpan="6"
                  x:Name="productGrid"  AlternatingRowBackground="LightGray" Margin="10,0,10,10">
- 
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Expiry Date" Binding="{Binding Path=ExpirationDate, StringFormat=d}"/>
 
-                <DataGridTextColumn Header="Food Name" Binding="{Binding Path=ProductName}"/>
-            </DataGrid.Columns>
 
         </DataGrid>
         

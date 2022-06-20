@@ -12,6 +12,7 @@ namespace WPF_ExpirationDateTracker.ViewModels
     {
         private string _productName;
         private DateOnly _expiryDate;
+
         private Product _selectedProduct;
         private BindableCollection<Product> _products = new BindableCollection<Product>();
 
