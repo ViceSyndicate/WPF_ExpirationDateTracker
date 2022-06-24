@@ -22,11 +22,12 @@ namespace WPF_ExpirationDateTracker
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Models.Product> productList = new List<Models.Product>();
+        internal List<Models.Product> productList = new List<Models.Product>();
         public MainWindow()
         {
             InitializeComponent();
             DataManager dataManager = new DataManager();
+            // populate product list from local file
             productList = dataManager.GetFoods();
             productGrid.ItemsSource = productList;
         }
@@ -38,20 +39,21 @@ namespace WPF_ExpirationDateTracker
 
             Models.Product product = new Models.Product();
             product.Name = food_name;
-
+            // Handle exception when no date is entered.
             product.ExpirationDate = DateTime.Parse(food_expirationdate);
 
-
-            Console.WriteLine(product.Name);
-            Console.WriteLine(product.ExpirationDate);
             productList.Add(product);
 
             DataManager dataManager = new DataManager();
             dataManager.StoreFoods(productList);
+            // Update productList in the view.
+            productGrid.ItemsSource = null;
+            productGrid.ItemsSource = productList;
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
+            // TODO
             string food_name = name.Text;
         }
     }

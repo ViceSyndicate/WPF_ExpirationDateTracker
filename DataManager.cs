@@ -7,26 +7,28 @@ using System.Text;
 using System.Threading.Tasks;
 //using System.Text.Json;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace WPF_ExpirationDateTracker
 {
     public class DataManager
     {
-        string userName;
-        private string location = "C:\\Users\\victo\\source\\repos\\WPF_ExpirationDateTracker\\WPF_ExpirationDateTracker\\foods.json";
-        //private string jsonFoodFile = "foods.json";
+        private string location;
 
         public DataManager()
         {
+            string localFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            location = localFolderPath + "\\foods.json";
             CreateFile();
-            userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            Console.WriteLine();
         }
 
         public void CreateFile()
         {
-            // C:\Users\%user%\Documents? 
-            if (!File.Exists(location))
+            if (File.Exists(location))
+            {
+                return;
+            }
+            else 
             {
                 FileStream fs = File.Create(location);
                 File.Create(location);
@@ -36,31 +38,23 @@ namespace WPF_ExpirationDateTracker
 
         public List<Models.Product> GetFoods()
         {
-            var products = new List<Models.Product>();
-
-            string jsonString = File.ReadAllText(location);
-            //TODO
-            //var something = System.Text.Json.JsonSerializer.Deserialize<Models.Product>(jsonString);
-            Console.WriteLine();
+            List<Models.Product> products = new List<Models.Product>();
 
             if (File.Exists(location))
             {
-
+                string jsonString = File.ReadAllText(location);
                 using (StreamReader sr = new StreamReader(location))
                 {
-                    string line = sr.ReadLine();
-                    string readData = sr.ReadToEnd();
-
-                    //List<Models.Product> productsList = JsonConvert.DeserializeObject<List<Models.Product>>(readData);
                     using (JsonTextReader reader = new JsonTextReader(sr))
                     {
-                        List<Models.Product> productsList = JsonConvert.DeserializeObject<List<Models.Product>>(jsonString);
-                        return productsList;
+                        var storedProducts = JsonConvert.DeserializeObject<List<Models.Product>>(jsonString);
+                        if (storedProducts != null)
+                            products = storedProducts;
+                        return products;
                     }
-                    Console.WriteLine();
                 }  
-                return products;
             }
+            // return empty list
             return products;
         }
 
