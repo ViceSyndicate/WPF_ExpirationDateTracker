@@ -53,8 +53,17 @@ namespace WPF_ExpirationDateTracker
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
-            string food_name = name.Text;
+            var selectedItem = productGrid.SelectedItem;
+            if (selectedItem != null)
+            {
+                Models.Product targetToDelete = (Models.Product)selectedItem;
+                productList.Remove(targetToDelete);
+                // Update food.json & view
+                DataManager dataManager = new DataManager();
+                dataManager.StoreFoods(productList);
+                productGrid.ItemsSource = null;
+                productGrid.ItemsSource = productList;
+            }
         }
     }
 }
