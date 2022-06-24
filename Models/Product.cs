@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_ExpirationDateTracker.Models
 {
-    public class Product
+    [Serializable] public class Product
     {
         private DateTime expirationDate;
         public DateTime ExpirationDate
