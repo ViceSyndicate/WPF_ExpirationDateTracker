@@ -30,9 +30,10 @@ namespace WPF_ExpirationDateTracker
             }
             else 
             {
-                FileStream fs = File.Create(location);
-                File.Create(location);
-                fs.Close();
+                using (FileStream fs = File.Create(location))
+                {
+                    fs.Close();
+                }
             }
         }
 

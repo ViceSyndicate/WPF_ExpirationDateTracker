@@ -38,9 +38,11 @@ namespace WPF_ExpirationDateTracker
             string food_expirationdate = date.Text ;
 
             Models.Product product = new Models.Product();
+            // Handle exception when no name or date is entered.
             product.Name = food_name;
-            // Handle exception when no date is entered.
-            product.ExpirationDate = DateTime.Parse(food_expirationdate);
+            product.ExpirationDate = DateOnly.Parse(food_expirationdate);
+            //product.ExpirationDate = Date.Parse(food_expirationdate);
+            //product.ExpirationDate = product.ExpirationDate.Date;
 
             productList.Add(product);
 
