@@ -8,8 +8,8 @@ namespace WPF_ExpirationDateTracker.Models
 {
     [Serializable] public class Product
     {
-        private DateOnly expirationDate;
-        public DateOnly ExpirationDate
+        private DateTime expirationDate;
+        public DateTime ExpirationDate
         {
             get { return expirationDate; }
             set { expirationDate = value; }

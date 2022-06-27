@@ -30,6 +30,7 @@ namespace WPF_ExpirationDateTracker
             // populate product list from local file
             productList = dataManager.GetFoods();
             productGrid.ItemsSource = productList;
+            //string format = "yyyy-MM-dd";
         }
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
@@ -40,7 +41,7 @@ namespace WPF_ExpirationDateTracker
             Models.Product product = new Models.Product();
             // Handle exception when no name or date is entered.
             product.Name = food_name;
-            product.ExpirationDate = DateOnly.Parse(food_expirationdate);
+            product.ExpirationDate = DateTime.Parse(food_expirationdate);
             //product.ExpirationDate = Date.Parse(food_expirationdate);
             //product.ExpirationDate = product.ExpirationDate.Date;
 
@@ -66,6 +67,23 @@ namespace WPF_ExpirationDateTracker
                 productGrid.ItemsSource = null;
                 productGrid.ItemsSource = productList;
             }
+        }
+        private void productGrid_DataGridAutoGeneratingColumnEventArgs(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyType == typeof(DateTime))
+            {
+                DataGridTextColumn dataGridTextColumn = e.Column as DataGridTextColumn;
+
+                if (dataGridTextColumn != null)
+                {
+                    dataGridTextColumn.Binding.StringFormat = "{0:d}";
+                }
+            }
+        }
+
+        private void productGrid_DataGridAutoGeneratingColumnEventArgs(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
