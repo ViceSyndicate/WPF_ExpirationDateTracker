@@ -35,18 +35,25 @@ namespace WPF_ExpirationDateTracker
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
+
             string food_name = name.Text;
-            string food_expirationdate = date.Text ;
+            string food_expirationdate = date.Text;
+
+            if (food_name == null || food_name == "")
+                return;
+
+            // Convert the date.Text to DateTime
+            DateTime expiryDateTime;
+            if (!DateTime.TryParse(food_expirationdate, out expiryDateTime))
+                return;
 
             Models.Product product = new Models.Product();
-            // Handle exception when no name or date is entered.
             product.Name = food_name;
-            product.ExpirationDate = DateTime.Parse(food_expirationdate);
-            //product.ExpirationDate = Date.Parse(food_expirationdate);
-            //product.ExpirationDate = product.ExpirationDate.Date;
+            product.ExpirationDate = expiryDateTime;
 
             productList.Add(product);
 
+            // Store new food
             DataManager dataManager = new DataManager();
             dataManager.StoreFoods(productList);
             // Update productList in the view.
