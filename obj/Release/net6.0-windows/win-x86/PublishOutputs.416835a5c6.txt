@@ -1,0 +1,8 @@
+C:\Users\victo\Desktop\New folder\WPF_ExpirationDateTracker.pdb
+C:\Users\victo\Desktop\New folder\D3DCompiler_47_cor3.dll
+C:\Users\victo\Desktop\New folder\PenImc_cor3.dll
+C:\Users\victo\Desktop\New folder\PresentationNative_cor3.dll
+C:\Users\victo\Desktop\New folder\vcruntime140_cor3.dll
+C:\Users\victo\Desktop\New folder\wpfgfx_cor3.dll
+C:\Users\victo\Desktop\New folder\sni.dll
+C:\Users\victo\Desktop\New folder\WPF_ExpirationDateTracker.exe

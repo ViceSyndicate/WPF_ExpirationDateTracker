@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Configuration;
 
+using System.Windows.Forms;
+
+//using Forms = System.Windows.Forms;
+
 namespace WPF_ExpirationDateTracker
 {
     public class DataManager
@@ -51,12 +55,27 @@ namespace WPF_ExpirationDateTracker
                         var storedProducts = JsonConvert.DeserializeObject<List<Models.Product>>(jsonString);
                         if (storedProducts != null)
                             products = storedProducts;
+
+                        // TODO: Check if expiry dates < 2 weeks out
+                        PingUser(products);
                         return products;
                     }
                 }  
             }
+
             // return empty list
             return products;
+        }
+
+        public void PingUser(List<Models.Product> products)
+        {
+            foreach (Models.Product product in products)
+            {
+                if (product.ExpirationDate < DateTime.Now.AddDays(12))
+                {
+                    Console.WriteLine("2 weeks out!");
+                }
+            }
         }
 
         public bool StoreFoods(List<Models.Product> products)

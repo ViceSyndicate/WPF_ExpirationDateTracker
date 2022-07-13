@@ -30,6 +30,7 @@ namespace WPF_ExpirationDateTracker
             // populate product list from local file
             productList = dataManager.GetFoods();
             productGrid.ItemsSource = productList;
+
             //string format = "yyyy-MM-dd";
         }
 
