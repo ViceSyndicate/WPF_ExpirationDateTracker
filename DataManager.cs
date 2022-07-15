@@ -9,32 +9,31 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Configuration;
 
-using System.Windows.Forms;
-
 //using Forms = System.Windows.Forms;
 
 namespace WPF_ExpirationDateTracker
 {
     public class DataManager
     {
-        private string location;
+        private string foodFile;
 
         public DataManager()
         {
             string localFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            location = localFolderPath + "\\foods.json";
+            foodFile = localFolderPath + "\\foods.json";
+
             CreateFile();
         }
 
         public void CreateFile()
         {
-            if (File.Exists(location))
+            if (File.Exists(foodFile))
             {
                 return;
             }
             else 
             {
-                using (FileStream fs = File.Create(location))
+                using (FileStream fs = File.Create(foodFile))
                 {
                     fs.Close();
                 }
@@ -45,10 +44,10 @@ namespace WPF_ExpirationDateTracker
         {
             List<Models.Product> products = new List<Models.Product>();
 
-            if (File.Exists(location))
+            if (File.Exists(foodFile))
             {
-                string jsonString = File.ReadAllText(location);
-                using (StreamReader sr = new StreamReader(location))
+                string jsonString = File.ReadAllText(foodFile);
+                using (StreamReader sr = new StreamReader(foodFile))
                 {
                     using (JsonTextReader reader = new JsonTextReader(sr))
                     {
@@ -84,7 +83,7 @@ namespace WPF_ExpirationDateTracker
             {
                 string serializedProducts = JsonConvert.SerializeObject(products);
                 //var serializedProducts = System.Text.Json.JsonSerializer.Serialize(products);
-                File.WriteAllText(location, serializedProducts);
+                File.WriteAllText(foodFile, serializedProducts);
             }
             catch (Exception ex)
             {
